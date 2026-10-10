@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>JI test — document_start</title></head>
+<body>
+  <h1>document_start test</h1>
+  <div id="pre-check">pending</div>
+  <script>
+    // Runs during page parsing: a document_start MAIN-world injection that set
+    // window.__pre must have beaten us here.
+    document.getElementById('pre-check').textContent =
+      window.__pre === 'injected-before-page' ? 'PASS' : 'FAIL';
+  </script>
+</body>
+</html>
