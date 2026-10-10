@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JS Injector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon32.png" alt="">
+    <h1>JS Injector</h1>
+    <span id="status-pill" class="pill">…</span>
+  </header>
+
+  <div id="engine-warning" class="warning" hidden>
+    Engine off — enable <b>Developer Mode</b> / <b>Allow user scripts</b> in <code>chrome://extensions</code>.
+  </div>
+
+  <section id="site-section">
+    <div class="site-line">
+      <span id="site-host" class="site-host">…</span>
+      <label class="global-switch" title="Master on/off for all injections">
+        <input type="checkbox" id="global-toggle" class="switch-input">
+        <span class="switch-track"><span class="switch-knob"></span></span>
+      </label>
+    </div>
+    <div id="rules-list" class="rules-list"></div>
+    <div id="no-rules" class="muted" hidden>No rules match this page.</div>
+    <button id="btn-add-site" class="btn btn-accent btn-block">+ Add rule for this site</button>
+  </section>
+
+  <footer>
+    <button id="btn-dashboard" class="btn btn-block">Open Dashboard</button>
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

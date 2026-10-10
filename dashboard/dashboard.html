@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JS Injector — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body id="ji-dashboard">
+  <header class="topbar">
+    <div class="brand">
+      <img src="../icons/icon32.png" alt="">
+      <h1>JS Injector</h1>
+      <span id="status-pill" class="pill pill-unknown" title="userScripts API status">checking…</span>
+    </div>
+    <div class="topbar-actions">
+      <label class="global-switch" title="Master on/off switch for all injections">
+        <input type="checkbox" id="global-toggle" class="switch-input">
+        <span class="switch-track"><span class="switch-knob"></span></span>
+        <span class="switch-label">Injection on</span>
+      </label>
+      <button id="btn-export" class="btn" title="Download all rules as JSON">Export</button>
+      <button id="btn-import" class="btn" title="Replace all rules from a JSON file">Import</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+      <button id="btn-new" class="btn btn-primary">+ New rule</button>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <main>
+    <section id="editor" class="card editor" hidden></section>
+
+    <section id="rules-section">
+      <div class="section-head">
+        <h2>Rules <span id="rules-count" class="muted"></span></h2>
+      </div>
+      <div id="rules-list"></div>
+      <div id="empty-state" class="card empty" hidden>
+        <p>No rules yet.</p>
+        <p class="muted">Create a rule that matches websites by base domain, regex or match pattern, then attach one or more scripts to inject.</p>
+        <button id="btn-new-empty" class="btn btn-primary">+ New rule</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
